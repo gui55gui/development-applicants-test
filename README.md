@@ -9,7 +9,7 @@ We garantee that it will be a nice test.
 - Make a humanized, reusable and testable backend to show us your code-organization and code-logic.
 - Tests, tests, tests (_a simple "pass" or "fail" information is good enough for us_).
 
-### Some Functions (should-have)
+### Some Functions (must-have)
 - Option to save current weather and observation.
 - Option to list saved weather with city, date, weather and observation.
 - Search weather by city and/or date.
