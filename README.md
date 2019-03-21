@@ -9,10 +9,25 @@ We garantee that it will be a nice test.
 - Make a humanized, reusable and testable backend to show us your code-organization and code-logic
 - Tests, tests, tests
 
+# Some Functions (should-vave)
+- Option to save current weather and observation
+- Option to list saved weather with city, date, weather and observation
+- Search weather by city
+- Oprtion to delete a saved weather
+
 # Requirements
-- You **have 48 hours** from PULL REQUEST until MERGE
-- We would like to see our stack been used (_A lot of JS, including **AngularJS**, **Node.JS** and stuff_). But, you can choose your own. (**Our Software Developement Coordinator does not like JAVA, btw**)
+- You have **72 hours**
+- We would like to see our stack been used (_A lot of JS, including **AngularJS**, **Node.js** and stuff_). But, you can choose your own. (**Our Software Developement Coordinator does not like JAVA, btw**)
+- Fork this repository and add your code and any assets we would require to take a look at your work.
 - Here, we use **VSCode** to build awesome software. So, we need a workspace to open in our IDE. Bring everthing you need.
+
+# Project Structure Example
+```
+    root folder
+        frontend -> AngularJS code (or whatever)
+        backend -> Node.js code (or whatever)
+        data -> mongodump of your testing database
+```
 
 # Important
 We love coding! So, make sure to write **beautiful lines**.  
