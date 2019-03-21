@@ -17,7 +17,7 @@ We garantee that it will be a nice test.
 
 ### Requirements
 - You have **72 hours** starting from fork this repo.
-- We would like to see our stack been used (_A lot of JS, including **AngularJS**, **Node.js** and stuff_). But, you can choose your own. (**Our Software Developement Coordinator does not like JAVA, btw**).
+- We would like to see our stack been used (_A lot of JS, including **AngularJS**, **Node.js** and stuff_). But, you can choose your own. (**Our Software Development Coordinator does not like JAVA, btw**).
 - Fork this repository and add your code and any assets to take a look at your work. Bring everthing you need.
 - Here, we use **VSCode** to build awesome software. So, we need a workspace to open in our IDE. 
 
