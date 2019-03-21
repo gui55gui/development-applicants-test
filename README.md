@@ -1,4 +1,4 @@
-# ALLOG Development Applicants Test
+# ALLOG Development Test
 Welcome applicants!
 
 We garantee that it will be a nice test.
