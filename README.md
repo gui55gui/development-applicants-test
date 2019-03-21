@@ -16,9 +16,9 @@ We garantee that it will be a nice test.
 - Option to delete a saved weather.
 
 ### Requirements
-- You have **72 hours** starting from fork this repo.
+- You have **72 hours** starting from the fork of this repo.
 - We would like to see our stack been used (_A lot of JS, including **AngularJS**, **Node.js** and stuff_). But, you can choose your own. (**Our Software Development Coordinator does not like JAVA, btw**).
-- Fork this repository and add your code and any assets to take a look at your work. Bring everthing you need.
+- Fork this repository and add your code, plus any other assets to run your work. Bring everthing you need.
 - Here, we use **VSCode** to build awesome software. So, we need a workspace to open in our IDE. 
 
 ### Project Structure Example
@@ -31,7 +31,7 @@ We garantee that it will be a nice test.
 
 ### Important
 We love coding! So, make sure to write **beautiful lines**.  
-We'll appreaciate that and check every single piece of code that you wrote and talk about it later, so you can explain to us **your babies**.  
+We'll appreaciate that and check every single piece of code that you wrote and talk about it later, so you can explain us **your babies**.  
 We are looking forward to see your coding skills.  
 
 ### DAMN, We almost forgot
