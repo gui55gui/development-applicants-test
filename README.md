@@ -10,8 +10,8 @@ We garantee that it will be a nice test.
 - Tests, tests, tests
 
 # Requirements
-- You *have 48 hours* from PULL REQUEST until MERGE
-- We would like to see our stack been used. But, you can choose your own. (_Our Software Developement Coordinator does not like JAVA, btw_)
+- You **have 48 hours** from PULL REQUEST until MERGE
+- We would like to see our stack been used (_A lot of JS, including AngularJS, Node.JS and stuff_). But, you can choose your own. (**Our Software Developement Coordinator does not like JAVA, btw**)
 - Here, we use VSCode to build awesome software. So, we need a workspace to open in our IDE. Bring everthing you need.
 
 # Important
