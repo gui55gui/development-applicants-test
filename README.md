@@ -36,3 +36,5 @@ We are looking forward to see your coding skills.
 
 ### DAMN, We almost forgot
 We're an **agile team**, so we need to see some **Sprint Backlog and tasks**. It could be printed, on **Trello**, or a photo of your Kanban. :)
+
+If you have any questions, please email `dev@allog.com.br`.
