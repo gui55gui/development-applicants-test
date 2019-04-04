@@ -4,7 +4,7 @@ Welcome applicants!
 We garantee that it will be a nice test.
 
 ### What you have to do
-- Consume any weather API (some examples: https://dzone.com/articles/4-free-weather-providers-api-to-develop-weather-ap-1).
+- Consume any weather API (some examples: https://github.com/toddmotto/public-apis#weather).
 - Make a nice frontend to show us your UI/UX skills.
 - Make a humanized, reusable and testable backend to show us your code-organization and code-logic.
 - Tests, tests, tests (_a simple "pass" or "fail" information is good enough for us_).
