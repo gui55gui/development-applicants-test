@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "test": "node src/index.test.js",
     "dev": "nodemon src/config/server.js",
     "prod": "pm2 start src/config/server.js --name backend"
   },
