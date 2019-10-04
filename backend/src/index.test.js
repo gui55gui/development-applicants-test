@@ -18,7 +18,7 @@ test('GET /weather', (t) => {
     })
 
     supertest(app).get('/weather/find')
-        .query({"date": "2019-10-04T20:00:20.050Z"})
+        .query({"date": "2019-10-04 20:58:14.701Z"})
         .expect('Content-Type', /json/)
         .expect(200).end((err, res) => {
         t.error(err, 'Weather Specific Find By Date - Requisition - OK!')
