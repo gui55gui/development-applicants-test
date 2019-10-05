@@ -1,18 +1,19 @@
 const Weather = require('../models/Weather');
 const api = require('../services/openWeatherService');
 
-const getWeather = async (params) => {
-    const {city_id, lat, lon} = params;
+const getWeather = async ({city_name, city_id, lat, lon}) => {
+
     let weather = null;
 
     let getParams = {appid: "c6a44a4fc4ee550e904e908b7a325947", lang: "pt", units: "metric"};
 
-    if (city_id) {
-        getParams.id = city_id;
-    }
     if (lat && lon) {
         getParams.lat = lat;
         getParams.lon = lon;
+    } else if (city_id) {
+        getParams.id = city_id;
+    } else if(city_name) {
+        getParams.q = city_name;
     }
 
     try {
@@ -25,23 +26,28 @@ const getWeather = async (params) => {
 
 module.exports = {
     async store(req, res) {
-        const {observation} = req.body;
-        const weatherApi = await getWeather(req.headers);
-        const {id: cityId, name: cityName} = weatherApi.data;
-        const {lat, lon} = weatherApi.data.coord;
-        const {temp, temp_min: tempMin, temp_max: tempMax} = weatherApi.data.main;
-        const {description, icon} = weatherApi.data.weather[0];
-        const weather = await Weather.create({
-            city: {id: cityId, name: cityName},
-            coords: {lat, lon},
-            temp,
-            tempMin,
-            tempMax,
-            description,
-            icon,
-            observation
-        });
-        return res.json(weather);
+        let {city_name, city_id, lat, lon, observation} = req.body;
+        const weatherApi = await getWeather({city_name, city_id, lat, lon});
+        const {cod, message, id: cityId, name: cityName} = weatherApi.data;
+        if(cod === 200) {
+            lat = weatherApi.data.coord.lat;
+            lon = weatherApi.data.coord.lon;
+            const {temp, temp_min: tempMin, temp_max: tempMax} = weatherApi.data.main;
+            const {description, icon} = weatherApi.data.weather[0];
+            const weather = await Weather.create({
+                city: {id: cityId, name: cityName},
+                coords: {lat, lon},
+                temp,
+                tempMin,
+                tempMax,
+                description,
+                icon,
+                observation
+            });
+            return res.json(weather);
+        } else {
+            return res.status(cod).send({error: message});
+        }
     },
     async index(req, res) {
         try {
