@@ -2,14 +2,14 @@ const test = require('tape');
 const supertest = require('supertest');
 const app = require('./config/server');
 
-test('GET /weather', (t) => {
-    supertest(app).get('/weather').expect('Content-Type', /json/)
+test('GET /api/weather', (t) => {
+    supertest(app).get('/api/weather').expect('Content-Type', /json/)
         .expect(200).end((err, res) => {
         t.error(err, 'Weather List - Requisition - OK!')
         t.assert(!res.body.error, "Weather List - Content - OK!")
     })
 
-    supertest(app).get('/weather/find')
+    supertest(app).get('/api/weather/find')
         .query({"city": "Joinville"})
         .expect('Content-Type', /json/)
         .expect(200).end((err, res) => {
@@ -17,7 +17,7 @@ test('GET /weather', (t) => {
         t.assert(res.body[0].city.name === "Joinville", "Weather Specific Find By City Name = Joinville - Content - OK!")
     })
 
-    supertest(app).get('/weather/find')
+    supertest(app).get('/api/weather/find')
         .query({"date": "2019-10-04 20:58:14.701Z"})
         .expect('Content-Type', /json/)
         .expect(200).end((err, res) => {
@@ -27,11 +27,12 @@ test('GET /weather', (t) => {
     })
 })
 
-test('POST /weather', (t) => {
-    supertest(app).post('/weather').send({
+test('POST /api/weather', (t) => {
+    supertest(app).post('/api/weather').send({
+        'city_name': 'Joinville',
+        'city_id': 3459712,
         'observation': 'Observação teste'
     })
-        .set("city_id", 3459712)
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
         .expect(200).end((err, res) => {
@@ -39,11 +40,11 @@ test('POST /weather', (t) => {
         t.assert(res.body.city.name === "Joinville", "Weather Post City Id - Content - OK!")
     })
 
-    supertest(app).post('/weather').send({
+    supertest(app).post('/api/weather').send({
+        'lat': -26.3,
+        'lon': -48.85,
         'observation': 'Observação teste'
     })
-        .set("lat", -26.3)
-        .set("lon", -48.85)
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
         .expect(200).end((err, res) => {
@@ -53,8 +54,8 @@ test('POST /weather', (t) => {
     })
 })
 
-test('DELETE /weather', (t) => {
-    supertest(app).delete('/weather')
+test('DELETE /api/weather', (t) => {
+    supertest(app).delete('/api/weather')
         .query({"id": "5d97a550a12c671de8ec0ddc"})
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
