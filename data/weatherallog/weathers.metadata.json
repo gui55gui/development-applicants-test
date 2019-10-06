@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"weatherallog.weathers"}],"uuid":"38cdc491532c4ed9bc9a8ce73c5c6181"}
