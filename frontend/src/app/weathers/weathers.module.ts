@@ -7,6 +7,8 @@ import {ListarWeatherComponent} from "./listar/listar-weather.component";
 import {HttpClientModule} from "@angular/common/http";
 import {WeathersService} from "./shared";
 import {CadastrarWeatherComponent} from "./cadastrar";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     declarations: [ListarWeatherComponent, CadastrarWeatherComponent],
@@ -14,7 +16,13 @@ import {CadastrarWeatherComponent} from "./cadastrar";
         CommonModule,
         RouterModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut: 2000,
+            positionClass: 'toast-top-right',
+            preventDuplicates: false
+        }),
     ],
     providers: [WeathersService]
 })
