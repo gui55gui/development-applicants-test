@@ -34,3 +34,44 @@ table, th, td{
     font-weight: bold;
     border: 1px double white !important;
 }
+
+.my-pagination {
+    font-weight: bold !important;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    font-size: 18px;
+}
+
+/*
+//Todas as paginas
+.my-pagination /deep/ .ngx-pagination li :hover{
+    background: #2199e8 !important;
+}
+
+//Pagina selecionada
+.my-pagination /deep/ .ngx-pagination li.current :hover{
+    background: #2199e8 !important;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+
+}
+
+//Paginação anterior desabilitada
+.my-pagination /deep/ .ngx-pagination .pagination-previous > li:first-child > span:first-child {
+
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-previous :hover{
+
+}
+
+.my-pagination /deep/ .pagination-next .disabled span {
+    background: red !important;
+}
+
+.my-pagination /deep/ .ngx-pagination .pagination-next :hover{
+    //background: #089bff;
+}
+*/

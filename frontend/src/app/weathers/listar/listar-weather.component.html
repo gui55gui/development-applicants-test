@@ -35,7 +35,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let weather of weathers">
+                <tr *ngFor="let weather of weathers | paginate: { itemsPerPage : 8, currentPage: p }">
                     <td>
                         {{weather.city.name}}
                         <img [src]='"http://openweathermap.org/img/wn/"+weather.icon+".png"' />
@@ -74,6 +74,7 @@
                 </tr>
             </tbody>
         </table>
+        <pagination-controls previousLabel="Anterior" nextLabel="Próximo" maxSize="8" class="my-pagination" (pageChange)="p = $event"></pagination-controls>
 
         <p *ngIf="!weathers || weathers.length==0">Nenhum Clima cadastrado.</p>
     </div>

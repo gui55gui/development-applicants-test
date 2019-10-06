@@ -12,6 +12,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { ptBrLocale } from 'ngx-bootstrap/locale';
 import {BsDatepickerModule} from "ngx-bootstrap";
+import {NgxPaginationModule} from "ngx-pagination";
 
 // Define o locale para portugues - br. (necessario para utilizar o locale no componente)
 defineLocale('pt-br', ptBrLocale);
@@ -30,6 +31,7 @@ defineLocale('pt-br', ptBrLocale);
             preventDuplicates: false
         }),
         BsDatepickerModule.forRoot(),
+        NgxPaginationModule
     ],
     providers: [WeathersService]
 })
