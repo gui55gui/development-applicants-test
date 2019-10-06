@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {NgForm} from "@angular/forms";
 import {Weather, WeathersService} from "../shared";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
     selector: 'app-listar-weather',
@@ -14,7 +15,7 @@ export class ListarWeatherComponent implements OnInit {
     searchCity: string;
     searchDate: string;
 
-    constructor(private weatherService: WeathersService) {
+    constructor(private weatherService: WeathersService, private toastr: ToastrService) {
     }
 
     ngOnInit() {
@@ -23,11 +24,21 @@ export class ListarWeatherComponent implements OnInit {
         this.searchDate = "";
     }
 
+    showSuccess(msg) {
+        this.toastr.success(msg);
+    }
+
+    showError(msg) {
+        this.toastr.error(msg);
+    }
+
+
     listarTodos(): Weather[] {
         this.weatherService.listarTodos().subscribe(data => {
             this.weathers = data;
         }, (error) => {
             const {message} = error.error;
+            this.showError(message ? message : error.message);
             this.weathers = [];
         });
         return this.weathers;
