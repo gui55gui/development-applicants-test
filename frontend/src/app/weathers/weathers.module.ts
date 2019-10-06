@@ -6,9 +6,10 @@ import {FormsModule} from '@angular/forms';
 import {ListarWeatherComponent} from "./listar/listar-weather.component";
 import {HttpClientModule} from "@angular/common/http";
 import {WeathersService} from "./shared";
+import {CadastrarWeatherComponent} from "./cadastrar";
 
 @NgModule({
-    declarations: [ListarWeatherComponent],
+    declarations: [ListarWeatherComponent, CadastrarWeatherComponent],
     imports: [
         CommonModule,
         RouterModule,

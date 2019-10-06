@@ -21,4 +21,8 @@ export class WeathersService {
     handleError(error: HttpErrorResponse) {
         return throwError(error);
     }
+
+    cadastrar(weather: Weather): Observable<Weather> {
+        return this.httpClient.post<Weather>(this.url+"/weather", {city_name: weather.city.name, city_id: weather.city.id, lat: weather.coords.lat, lon: weather.coords.lon, observation: weather.observation}).pipe(catchError(this.handleError));
+    }
 }
