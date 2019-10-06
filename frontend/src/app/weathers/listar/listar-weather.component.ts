@@ -32,6 +32,18 @@ export class ListarWeatherComponent implements OnInit {
         this.toastr.error(msg);
     }
 
+    remover($event: any, weather: Weather): void {
+        $event.preventDefault();
+        if(confirm('Deseja remover o clima?')) {
+            this.weatherService.remover(weather._id).subscribe(data => {
+                this.showSuccess('Clima removido com sucesso!');
+                this.weathers = this.listarTodos();
+            }, (error) => {
+                const {message} = error.error;
+                this.showError(message ? message : error.message);
+            });
+        }
+    }
 
     listarTodos(): Weather[] {
         this.weatherService.listarTodos().subscribe(data => {

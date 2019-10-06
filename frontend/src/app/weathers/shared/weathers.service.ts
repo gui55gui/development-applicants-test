@@ -22,6 +22,10 @@ export class WeathersService {
         return throwError(error);
     }
 
+    remover(id: number): Observable<number> {
+        return this.httpClient.delete<number>(this.url+"/weather/"+id);
+    }
+
     cadastrar(weather: Weather): Observable<Weather> {
         return this.httpClient.post<Weather>(this.url+"/weather", {city_name: weather.city.name, city_id: weather.city.id, lat: weather.coords.lat, lon: weather.coords.lon, observation: weather.observation}).pipe(catchError(this.handleError));
     }
