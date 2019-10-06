@@ -1,3 +1,4 @@
+require('dotenv').config({path: __dirname + '/.env'});
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -7,7 +8,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const allowCors = require('./cors');
 
-mongoose.connect('mongodb://localhost:27017/weatherallog', {
+mongoose.connect(process.env['MONGO_URL'], {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -18,6 +19,6 @@ app.use(express.json());
 app.use(allowCors);
 app.use('/api', routes);
 
-app.listen(3333);
+app.listen(process.env['SV_PORT']);
 
 module.exports = app;

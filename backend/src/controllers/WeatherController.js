@@ -5,7 +5,7 @@ const getWeather = async ({city_name, city_id, lat, lon}) => {
 
     let weather = null;
 
-    let getParams = {appid: "c6a44a4fc4ee550e904e908b7a325947", lang: "pt", units: "metric"};
+    let getParams = {appid: process.env['API_KEY'], lang: "pt", units: "metric"};
 
     if (lat && lon) {
         getParams.lat = lat;
