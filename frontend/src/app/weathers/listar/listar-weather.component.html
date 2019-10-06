@@ -5,10 +5,10 @@
             <div class="row form-group">
                 <div class="col-md-12 input-group">
                     <input type="text" class="form-control col-md-10" id="searchCity" name="searchCity" placeholder="Busca por Cidade" aria-label="SearchCity" [(ngModel)]="searchCity">
-                    <input type="text" class="form-control col-md-2" id="searchDate" name="searchDate" placeholder="Busca por Data" aria-label="SearchDate" [(ngModel)]="searchDate" autocomplete="off">
+                    <input type="text" class="form-control col-md-2" id="searchDate" name="searchDate" placeholder="Busca por Data" aria-label="SearchDate" [(ngModel)]="searchDate" bsDatepicker="" [bsConfig]="datePickerConfig" autocomplete="off" [readonly]="true">
                     <div class="input-group-prepend cursor-pointer">
-                        <span class="input-group-text first-button-group"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <span class="input-group-text"><i class="fas fa-times" aria-hidden="true"></i></span>
+                        <span class="input-group-text first-button-group" (click)="buscar()"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <span class="input-group-text" (click)="limpar()"><i class="fas fa-times" aria-hidden="true"></i></span>
                     </div>
                 </div>
             </div>

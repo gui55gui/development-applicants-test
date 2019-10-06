@@ -9,6 +9,12 @@ import {WeathersService} from "./shared";
 import {CadastrarWeatherComponent} from "./cadastrar";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { ptBrLocale } from 'ngx-bootstrap/locale';
+import {BsDatepickerModule} from "ngx-bootstrap";
+
+// Define o locale para portugues - br. (necessario para utilizar o locale no componente)
+defineLocale('pt-br', ptBrLocale);
 
 @NgModule({
     declarations: [ListarWeatherComponent, CadastrarWeatherComponent],
@@ -23,6 +29,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
             positionClass: 'toast-top-right',
             preventDuplicates: false
         }),
+        BsDatepickerModule.forRoot(),
     ],
     providers: [WeathersService]
 })

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {Weather} from "./weathers.model";
 import {catchError} from "rxjs/operators";
@@ -24,6 +24,18 @@ export class WeathersService {
 
     remover(id: number): Observable<number> {
         return this.httpClient.delete<number>(this.url+"/weather/"+id);
+    }
+
+    buscarPorCidadeOuData(city: string, date: string): Observable<Weather[]> {
+        if(city !== "" || date !== "") {
+            const headers = new HttpHeaders();
+            let params = new HttpParams();
+            params = params.append('city', city);
+            params = params.append('date', date);
+            return this.httpClient.get<Weather[]>(this.url + "/weather/find", {headers, params});
+        } else {
+            return this.listarTodos();
+        }
     }
 
     cadastrar(weather: Weather): Observable<Weather> {

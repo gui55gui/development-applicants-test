@@ -20,6 +20,16 @@
     overflow: auto !important;
 }
 
+.first-button-group {
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+#searchDate {
+    background: white;
+    cursor: pointer;
+}
+
 table, th, td{
     font-weight: bold;
     border: 1px double white !important;
