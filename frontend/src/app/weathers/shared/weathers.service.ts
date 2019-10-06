@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/c
 import {Observable, throwError} from "rxjs";
 import {Weather} from "./weathers.model";
 import {catchError} from "rxjs/operators";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
     providedIn: 'root'
@@ -12,7 +13,7 @@ export class WeathersService {
     constructor(private httpClient: HttpClient) {
     }
 
-    url = 'http://localhost:3333/api';
+    url = environment.apiUrl;
 
     listarTodos(): Observable<Weather[]>{
         return this.httpClient.get<Weather[]>(this.url+"/weather").pipe(catchError(this.handleError));
