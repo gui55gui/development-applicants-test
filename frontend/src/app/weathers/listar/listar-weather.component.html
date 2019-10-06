@@ -1,0 +1,79 @@
+<div class="card card-default">
+    <h1 class="card-header">Climas</h1>
+    <div class="card-body">
+        <form #formList="ngForm">
+            <div class="row form-group">
+                <div class="col-md-12 input-group">
+                    <input type="text" class="form-control col-md-10" id="searchCity" name="searchCity" placeholder="Busca por Cidade" aria-label="SearchCity" [(ngModel)]="searchCity">
+                    <input type="text" class="form-control col-md-2" id="searchDate" name="searchDate" placeholder="Busca por Data" aria-label="SearchDate" [(ngModel)]="searchDate" autocomplete="off">
+                    <div class="input-group-prepend cursor-pointer">
+                        <span class="input-group-text first-button-group"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <span class="input-group-text"><i class="fas fa-times" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Cidade</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Observação</th>
+                <th>Temp</th>
+                <th>Temp Min</th>
+                <th>Temp Max</th>
+                <th class="text-center">
+                    <a
+                        class="btn btn-sm btn-success">
+                 <span class="fa fa-plus"
+                       aria-hidden="true"></span> Novo
+                    </a>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        Joinville
+                    </td>
+                    <td style="width: 90px">
+                        -10
+                    </td>
+                    <td style="width: 90px">
+                        -25
+                    </td>
+                    <td style="width: 200px">
+                        06/10/2019
+                    </td>
+                    <td>
+                        Nublado
+                    </td>
+                    <td>
+                        Teste
+                    </td>
+                    <td style="width: 70px">
+                        20
+                    </td>
+                    <td style="width: 110px">
+                        18
+                    </td>
+                    <td style="width: 110px">
+                        22
+                    </td>
+                    <td class="text-center" style="width: 120px">
+                        <a href="#" title="Remover" alt="Remover"
+                           class="btn btn-sm btn-danger">
+                        <span class="fa fa-trash"
+                              aria-hidden="true"></span> Remover
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p *ngIf="!weathers || weathers.length==0">Nenhum Clima cadastrado.</p>
+    </div>
+</div>

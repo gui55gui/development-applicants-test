@@ -1,0 +1,26 @@
+.btn {
+    margin: 3px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.input-group-text {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+}
+
+.card-default {
+    height: 100%;
+    background: #b9e1ff;
+}
+
+.card-body {
+    overflow: auto !important;
+}
+
+table, th, td{
+    font-weight: bold;
+    border: 1px double white !important;
+}
