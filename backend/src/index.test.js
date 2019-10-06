@@ -18,18 +18,17 @@ test('GET /api/weather', (t) => {
     })
 
     supertest(app).get('/api/weather/find')
-        .query({"date": "2019-10-04 20:58:14.701Z"})
+        .query({"date": "5/9/2019"})
         .expect('Content-Type', /json/)
         .expect(200).end((err, res) => {
         t.error(err, 'Weather Specific Find By Date - Requisition - OK!')
-        t.assert(res.body[0].city.name === "Joinville", "Weather Specific Find By Date - Content - OK!")
+        t.assert(res.body[0] && res.body[0].city.name === "Joinville", "Weather Specific Find By Date - Content - OK!")
         t.end()
     })
 })
 
 test('POST /api/weather', (t) => {
     supertest(app).post('/api/weather').send({
-        'city_name': 'Joinville',
         'city_id': 3459712,
         'observation': 'Observação teste'
     })
@@ -55,8 +54,7 @@ test('POST /api/weather', (t) => {
 })
 
 test('DELETE /api/weather', (t) => {
-    supertest(app).delete('/api/weather')
-        .query({"id": "5d97a550a12c671de8ec0ddc"})
+    supertest(app).delete('/api/weather/5d97a550a12c671de8ec0ddc')
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
         .expect(200).end((err, res) => {
