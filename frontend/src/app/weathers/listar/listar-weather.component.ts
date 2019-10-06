@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
 import {NgForm} from "@angular/forms";
-import {Weather} from "../shared";
+import {Weather, WeathersService} from "../shared";
 
 @Component({
     selector: 'app-listar-weather',
@@ -14,12 +14,23 @@ export class ListarWeatherComponent implements OnInit {
     searchCity: string;
     searchDate: string;
 
-    constructor() {
+    constructor(private weatherService: WeathersService) {
     }
 
     ngOnInit() {
+        this.weathers = this.listarTodos();
         this.searchCity = "";
         this.searchDate = "";
+    }
+
+    listarTodos(): Weather[] {
+        this.weatherService.listarTodos().subscribe(data => {
+            this.weathers = data;
+        }, (error) => {
+            const {message} = error.error;
+            this.weathers = [];
+        });
+        return this.weathers;
     }
 
 }

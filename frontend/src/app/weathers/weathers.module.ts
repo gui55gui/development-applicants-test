@@ -4,15 +4,18 @@ import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
 import {ListarWeatherComponent} from "./listar/listar-weather.component";
+import {HttpClientModule} from "@angular/common/http";
+import {WeathersService} from "./shared";
 
 @NgModule({
     declarations: [ListarWeatherComponent],
     imports: [
         CommonModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        HttpClientModule
     ],
-    providers: []
+    providers: [WeathersService]
 })
 export class WeathersModule {
 }

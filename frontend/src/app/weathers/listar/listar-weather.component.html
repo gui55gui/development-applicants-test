@@ -35,33 +35,34 @@
             </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr *ngFor="let weather of weathers">
                     <td>
-                        Joinville
+                        {{weather.city.name}}
+                        <img [src]='"http://openweathermap.org/img/wn/"+weather.icon+".png"' />
                     </td>
                     <td style="width: 90px">
-                        -10
+                        {{weather.coords.lat}}
                     </td>
                     <td style="width: 90px">
-                        -25
+                        {{weather.coords.lon}}
                     </td>
                     <td style="width: 200px">
-                        06/10/2019
+                        {{weather.convertedDate}}
                     </td>
                     <td>
-                        Nublado
+                        {{weather.description}}
                     </td>
                     <td>
-                        Teste
+                        {{weather.observation}}
                     </td>
                     <td style="width: 70px">
-                        20
+                        {{weather.temp}}
                     </td>
                     <td style="width: 110px">
-                        18
+                        {{weather.tempMin}}
                     </td>
                     <td style="width: 110px">
-                        22
+                        {{weather.tempMax}}
                     </td>
                     <td class="text-center" style="width: 120px">
                         <a href="#" title="Remover" alt="Remover"
